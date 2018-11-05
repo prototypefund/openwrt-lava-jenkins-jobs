@@ -32,7 +32,7 @@
 
     publishers:
       - archive:
-          artifacts: 'bin/ar71xx/generic/*.bin, bin/ar71xx/generic/*.img'
+          artifacts: 'bin/targets/ar71xx/generic/*.bin, bin/targets/ar71xx/generic/*.img'
           only-if-success: 'true'
           default-excludes: false
 
