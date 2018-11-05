@@ -92,5 +92,3 @@
         authenticated:
             - job-read
 
-  # - ein job zum bauen (ar71xx)
-  # - der triggered dann 5 weitere jobs
