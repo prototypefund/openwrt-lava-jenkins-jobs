@@ -1,0 +1,5 @@
+[jenkins]
+user=YOUR-NICE_USERNAME
+password=foobartoken
+url=https://jenkins.fe80.eu
+
