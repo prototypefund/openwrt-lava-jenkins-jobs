@@ -22,6 +22,8 @@
           git-config-name: 'Jenkins Builder'
           git-config-email: 'admax@fe80.eu'
           browser-url: 'https://git.openwrt.org/?p=openwrt/openwrt.git;a=summary'
+    triggers:
+      - timed: '@daily'
     parameters:
       - string:
           name: IMAGE_BUILD_NUMBER
@@ -29,13 +31,11 @@
       - string:
           name: IMAGE_JENKINS_JOB
           default: "${JOB_NAME}"
-
     publishers:
       - archive:
           artifacts: 'bin/targets/ar71xx/generic/*.bin, bin/targets/ar71xx/generic/*.img'
           only-if-success: 'true'
           default-excludes: false
-
       - trigger-parameterized-builds:
           - project: 'lava-ar71xx-generic-lava'
             current-parameters: true
