@@ -24,6 +24,9 @@ CONFIG_DEVEL=y
 CONFIG_BUILD_LOG=y
 CONFIG_TARGET_INITRAMFS_COMPRESSION_LZMA=y
 CONFIG_TARGET_ROOTFS_INITRAMFS=y
+# as long it's not possible to install package in initramfs,
+# we provide this package here
+CONFIG_PACKAGE_iperf=y
 EOF
 
 make defconfig && make -j "$CPUS"
