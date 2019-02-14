@@ -43,6 +43,8 @@
             current-parameters: true
             predefined-parameters: |
               IMAGE_URL=https://jenkins.fe80.eu/job/lava-ar71xx-generic-build/${IMAGE_BUILD_NUMBER}/artifact/bin/targets/ar71xx/generic/
+              COMMIT=${GIT_COMMIT}
+              BRANCH=${GIT_BRANCH}
     properties:
     - authorization:
         anonymous:
@@ -77,6 +79,14 @@
           name: IMAGE_URL
           default: ""
           description: "The base url for the images. E.g. https://.../bin/targets/ar71xx/generic/"
+      - string:
+          name: COMMIT
+          default: ""
+          description: "The git commit for which lava is creating. This will be only used as meta data, not checked out (given by the previous jenkins job)"
+      - string:
+          name: BRANCH
+          default: ""
+          description: "The git branch for which lava is creating. This will be only used as meta data, not checked out (given by the previous jenkins job)"
     builders:
       - shell: !include-raw: ar71xx-generic-lava.sh
     scm:
@@ -130,6 +140,8 @@
             current-parameters: true
             predefined-parameters: |
               IMAGE_URL=https://jenkins.fe80.eu/job/lava-ar71xx-tiny-build/${IMAGE_BUILD_NUMBER}/artifact/bin/targets/ar71xx/tiny/
+              COMMIT=${GIT_COMMIT}
+              BRANCH=${GIT_BRANCH}
     properties:
     - authorization:
         anonymous:
@@ -163,6 +175,14 @@
           name: IMAGE_URL
           default: ""
           description: "The base url for the images. E.g. https://.../bin/targets/ar71xx/tiny/"
+      - string:
+          name: COMMIT
+          default: ""
+          description: "The git commit for which lava is creating. This will be only used as meta data, not checked out (given by the previous jenkins job)"
+      - string:
+          name: BRANCH
+          default: ""
+          description: "The git branch for which lava is creating. This will be only used as meta data, not checked out (given by the previous jenkins job)"
     builders:
       - shell: !include-raw: ar71xx-generic-lava.sh
     scm:
