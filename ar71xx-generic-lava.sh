@@ -12,8 +12,6 @@
 # BOARD - defining the board to test
 # IMAGE_URL - url to the an image (e.g. produced by jenkins)
 
-export PATH=$PATH:/usr/local/bin
-
 if [ ! -e "job-templates/$BOARD.yml" ] ; then
 	echo "Can not find the template"
 	exit 127
@@ -35,4 +33,4 @@ export JOB_NAME="jenkins_$BUILD_NUMBER"
 export TEMPLATE_FILE
 export LAVA_USER
 
-run-lava-job.sh
+./bin/run-lava-job.sh
