@@ -34,7 +34,7 @@ export TEMPLATE_FILE
 export LAVA_USER
 
 if [ -n "$BRANCH" ] ; then
-	export BRANCH=$(echo "$BRANCH" | awk 's!origin/!!g')
+	export BRANCH=$(echo "$BRANCH" | sed 's!origin/!!g')
 fi
 
 ./bin/run-lava-job.sh
