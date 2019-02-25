@@ -33,4 +33,8 @@ export JOB_NAME="jenkins_$BUILD_NUMBER"
 export TEMPLATE_FILE
 export LAVA_USER
 
+if [ -n "$BRANCH" ] ; then
+	export BRANCH=$(echo "$BRANCH" | awk 's!origin/!!g')
+fi
+
 ./bin/run-lava-job.sh
