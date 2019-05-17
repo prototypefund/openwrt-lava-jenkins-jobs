@@ -51,6 +51,11 @@
             - job-read
         authenticated:
             - job-read
+    - build-discarder:
+        days-to-keep: -1
+        num-to-keep: -1
+        artifact-days-to-keep: 42
+        artifact-num-to-keep: 42
 
 - job:
     name: 'lava-ar71xx-generic-lava'
@@ -143,6 +148,11 @@
               COMMIT=${GIT_COMMIT}
               BRANCH=${GIT_BRANCH}
     properties:
+    - build-discarder:
+        days-to-keep: -1
+        num-to-keep: -1
+        artifact-days-to-keep: 42
+        artifact-num-to-keep: 42
     - authorization:
         anonymous:
             - job-read
